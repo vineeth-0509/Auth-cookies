@@ -18,7 +18,7 @@ export const Signin = () => {
                 username,
                 password
             }, {
-                withCredentials: true,
+                withCredentials: true,  // we need to have explicitly with credentials true, else it will not send a cookie, because we having both the frontend and the backend which need to communicate (cross origin requests)
             });
             alert("you are logged in")
         }}>Submit</button>

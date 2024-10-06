@@ -2,8 +2,12 @@ import axios from "axios";
 import { useEffect, useState } from "react"
 import { BACKEND_URL } from "../config";
 
+interface User{
+    userId : number;
+}
+
 export const User = () => {
-    const [userData, setUserData] = useState();
+    const [userData, setUserData] = useState <User | undefined>();
 
     useEffect(() => {
         axios.get(`${BACKEND_URL}/user`, {
